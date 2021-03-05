@@ -1,0 +1,1 @@
+# gthumb_make_panorama
