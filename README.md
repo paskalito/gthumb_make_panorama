@@ -1,10 +1,13 @@
 # gthumb_make_panorama
 
+An Easy and superconveniant way to Stitch together Panoramashots out of Gthumb.
+
 ### Install / Update
 
 #### Dependencies
 The Following Programs must be Installed (Install them from your Pakage manager)
 - Hugin
+- gthumb
 
 
 #### Install the Script
