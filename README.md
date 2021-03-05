@@ -1,6 +1,6 @@
 # gthumb_make_panorama
 
-An Easy and superconveniant way to Stitch together Panoramashots out of Gthumb.
+An Easy and superconvenient way to Stitch together Panoramashots out of Gthumb.
 
 ### Install / Update
 
