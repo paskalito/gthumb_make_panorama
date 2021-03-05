@@ -8,7 +8,7 @@ The Following Programs must be Installed (Install them from your Pakage manager)
 
 
 #### Install the Script
-Open a Terminal, Paste the Following Code and hit Enter, Type in your Password when are asked to
+Open a **Terminal**, **Paste** the Following **Code** and hit **Enter**, **Type** in your **Password** when are asked to
 ````
 cd /tmp && wget https://raw.githubusercontent.com/paskalito/gthumb_make_panorama/main/gthumb_make_panorama.sh && sudo chmod +x gthumb_make_panorama.sh && sudo mv -f gthumb_make_panorama.sh /usr/local/bin/gthumb_make_panorama.sh
 ````
