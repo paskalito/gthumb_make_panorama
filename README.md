@@ -17,4 +17,4 @@ Command: `mkdir -p /tmp/gthumb-make-panorama && cp %F /tmp/gthumb-make-panorama 
 
 Keyboardshortcut: `as you like :D (highly recomended)`
 
-4. Happy Panorama Making!
+4. Save > Ok > Happy Panorama Making!
