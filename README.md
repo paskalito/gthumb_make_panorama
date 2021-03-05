@@ -28,4 +28,4 @@ Keyboardshortcut: `as you like :D (highly recomended)`
 ### Usage
 1. Select any Amount of Pictures shot with an Overlay
 2. Go to **Toolbar** and click **Make Panorama** (Or use you **Shortcut**)
-3. Wait for the finished Panorama to appear on Bottom of your Picture Folder
+3. Wait for the finished Panorama to appear on Bottom of your Picture Folder (in gthumb)
