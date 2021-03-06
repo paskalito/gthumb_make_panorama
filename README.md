@@ -2,6 +2,9 @@
 
 An Easy and superconvenient way to Stitch together Panoramashots out of Gthumb.
 
+![yolo4](https://user-images.githubusercontent.com/8012793/110212413-81f0ba80-7e9b-11eb-9024-db8e10de31d7.gif)
+
+
 ### Install / Update
 
 #### Dependencies
