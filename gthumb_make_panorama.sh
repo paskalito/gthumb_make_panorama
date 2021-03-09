@@ -1,5 +1,5 @@
 # Custom Command to put into gthumb
-# mkdir -p /tmp/gthumb-make-panorama && cp %F /tmp/gthumb-make-panorama && paplay /usr/share/sounds/freedesktop/stereo/complete.oga && sh /usr/local/bin/gthumb_make_panorama.sh %P
+# mkdir -p /tmp/gthumb-make-panorama && cp %F /tmp/gthumb-make-panorama && paplay /usr/share/sounds/freedesktop/stereo/complete.oga & sh /usr/local/bin/gthumb_make_panorama.sh %P
 
 
 if hash pto_gen 2>/dev/null; then
@@ -41,13 +41,17 @@ if hash pto_gen 2>/dev/null; then
 	# Copy the Finished Panorama Back to the Original Path of the Pictures.
 	cp project.jpg "$1"/panorama-"$NOW".jpg
 
+	notify-send 'Panorama Finished' 'Check it out!' -u normal -i "$1"/panorama-"$NOW".jpg
+
 	# Delete our Temporary Workfolder
 	rm -rf ../"$NOW"
 	
 else
 	echo ERROR: Could not find hugin >&2
 	echo hugin needs to installed and in standardpath for make_panorama to work >&2
+		
+	notify-send 'ERROR: Could not find hugin' 'hugin needs to installed and in standardpath for make_panorama to work!
+	> Please install it and try again.' -u critical -i face-worried
+	# delete the Copied Files
+	rm /tmp/gthumb-make-panorama/*.*
 fi
-
-
-
