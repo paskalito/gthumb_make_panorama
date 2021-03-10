@@ -13,12 +13,14 @@ The Following Programs must be Installed (Install them from your Pakage manager)
 - gthumb
 
 
-#### Install the Script
+#### 1 Install/Update the Script
 Open a **Terminal**, **Paste** the Following **Code** and hit **Enter**, **Type** in your **Password** when are asked to
 ````
 cd /tmp && wget https://raw.githubusercontent.com/paskalito/gthumb_make_panorama/main/gthumb_make_panorama.sh && sudo chmod +x gthumb_make_panorama.sh && sudo mv -f gthumb_make_panorama.sh /usr/local/bin/gthumb_make_panorama.sh
 ````
-#### Setup the Custom Script in gthumb
+_In Case you want to Update to a newer Version of the Script just run this Command again, and you are good to go_
+
+#### 2 Setup the Custom Script in gthumb
 1. Open gthumb
 2. In the Top Bar click
 3. Toolbar > Personalize... > New
@@ -34,4 +36,4 @@ Keyboardshortcut: `as you like :D (highly recomended)`
 ### Usage
 1. Select any Amount of Pictures shot with an Overlay
 2. Go to **Toolbar** and click **Make Panorama** (Or use you **Shortcut**)
-3. Wait for the finished Panorama to appear on Bottom of your Picture Folder (in gthumb)
+3. Wait for the finished Panorama to appear on Bottom of your Pictures Folder (in gthumb)
