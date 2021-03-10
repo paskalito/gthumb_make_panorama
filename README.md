@@ -9,8 +9,8 @@ An Easy and superconvenient way to Stitch together Panoramashots out of Gthumb.
 
 #### Dependencies
 The Following Programs must be Installed (Install them from your Pakage manager)
-- Hugin
-- gthumb
+- hugin (http://hugin.sourceforge.net/
+- gthumb (https://gitlab.gnome.org/GNOME/gthumb)
 
 
 #### 1 Install/Update the Script
