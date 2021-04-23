@@ -12,11 +12,15 @@ if hash pto_gen 2>/dev/null; then
 	NOW=$(date +"%Y-%m-%d %H:%M:%S")
 	# Create that Folder
 	mkdir "$NOW"
+	# Wait in case files are still Copying // Workaround because apparently cp does not actually wait till finished.
+	sleep 2
 	# Move all the Pictures into that Folder
 	mv *.* "$NOW"
 	# cd into that Folder
 	cd "$NOW"
 
+	# get the name of the Oldest Picture
+	filename=$(ls -tNr1 | tail -1)
 
 	# Start with the creation of the Panorama
 	# source / credits : http://wiki.panotools.org/Panorama_scripting_in_a_nutshell#Why_would_you_do_that.3F
@@ -39,13 +43,12 @@ if hash pto_gen 2>/dev/null; then
 	nice -n 19 enblend -o project.jpg *.tif
 
 	# Copy the Finished Panorama Back to the Original Path of the Pictures.
-	cp project.jpg "$1"/panorama-"$NOW".jpg
+	cp project.jpg "$1"/"${filename%.*}"_panorama-"$NOW".jpg
 
 	notify-send 'Panorama Finished' 'Check it out!' -u normal -i "$1"/panorama-"$NOW".jpg
 
 	# Delete our Temporary Workfolder
 	rm -rf ../"$NOW"
-	
 else
 	echo ERROR: Could not find hugin >&2
 	echo hugin needs to installed and in standardpath for make_panorama to work >&2
