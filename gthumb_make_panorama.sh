@@ -25,6 +25,12 @@ if hash pto_gen 2>/dev/null; then
 	# Start with the creation of the Panorama
 	# source / credits : http://wiki.panotools.org/Panorama_scripting_in_a_nutshell#Why_would_you_do_that.3F
 
+# open flock for multiple commands - so only one panorama gets assembled at a time
+(
+ flock 9 || exit 1
+
+    notify-send 'Panorama started!' -u normal
+
 	nice -n 19 pto_gen * -o project.pto
 
 	nice -n 19 cpfind --multirow -o project.pto project.pto
@@ -44,8 +50,11 @@ if hash pto_gen 2>/dev/null; then
 
 	# Copy the Finished Panorama Back to the Original Path of the Pictures.
 	cp project.jpg "$1"/"${filename%.*}"_panorama-"$NOW".jpg
+   
+	notify-send 'Panorama Finished' 'Check it out!' -u normal -i "$1"/"${filename%.*}"_panorama-"$NOW".jpg
 
-	notify-send 'Panorama Finished' 'Check it out!' -u normal -i "$1"/panorama-"$NOW".jpg
+) 9>/tmp/gthumb-make-panorama.lockfile
+# close flock
 
 	# Delete our Temporary Workfolder
 	rm -rf ../"$NOW"
