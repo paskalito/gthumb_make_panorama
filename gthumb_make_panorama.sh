@@ -1,5 +1,5 @@
 # Custom Command to put into gthumb
-# mkdir -p /tmp/gthumb-make-panorama && cp %F /tmp/gthumb-make-panorama && paplay /usr/share/sounds/freedesktop/stereo/complete.oga & sh /usr/local/bin/gthumb_make_panorama.sh %P
+# mkdir -p /tmp/gthumb-make-panorama && cp -p %F /tmp/gthumb-make-panorama && paplay /usr/share/sounds/freedesktop/stereo/complete.oga & sh /usr/local/bin/gthumb_make_panorama.sh %P
 
 
 if hash pto_gen 2>/dev/null; then
@@ -48,8 +48,11 @@ if hash pto_gen 2>/dev/null; then
 
 	nice -n 19 enblend -o project.jpg *.tif
 
+	# Set Modification and access time equal to input file
+	touch -r "${filename}" "project.jpg"
+
 	# Copy the Finished Panorama Back to the Original Path of the Pictures.
-	cp project.jpg "$1"/"${filename%.*}"_panorama-"$NOW".jpg
+	cp -p project.jpg "$1"/"${filename%.*}"_panorama-"$NOW".jpg
    
 	notify-send 'Panorama Finished' 'Check it out!' -u normal -i "$1"/"${filename%.*}"_panorama-"$NOW".jpg
 
