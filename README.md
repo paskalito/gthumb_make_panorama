@@ -27,7 +27,7 @@ _In Case you want to Update to a newer Version of the Script just run this Comma
 
 Name: `Make Panorama`
 
-Command: `mkdir -p /tmp/gthumb-make-panorama && cp %F /tmp/gthumb-make-panorama && paplay /usr/share/sounds/freedesktop/stereo/complete.oga & sh /usr/local/bin/gthumb_make_panorama.sh %P`
+Command: `mkdir -p /tmp/gthumb-make-panorama && cp -p %F /tmp/gthumb-make-panorama && paplay /usr/share/sounds/freedesktop/stereo/complete.oga & sh /usr/local/bin/gthumb_make_panorama.sh %P`
 
 Keyboardshortcut: `as you like :D (highly recomended)`
 
