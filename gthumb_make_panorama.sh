@@ -48,6 +48,24 @@ if hash pto_gen 2>/dev/null; then
 
 	nice -n 19 enblend -o project.jpg *.tif
 
+
+	if hash exiftool 2>/dev/null; then
+		#https://photo.stackexchange.com/questions/47778/how-can-i-copy-all-meta-tags-other-than-the-thumbnail-from-a-source-jpg-to-a-d
+
+		# Copy Metadata from oldest Panorama Picture into Panorama, without Image With and Height, and Thumbnail since its diffrent in the panorama.
+		exiftool -TagsFromFile "${filename}" "-all:all>all:all" "project.jpg" -ExifImageWidth= -ExifImageHeight= -ThumbnailImage= -overwrite_original -m
+		#alternativcommand > working weiss nicht wies mit geo ist.
+		#exiftool -TagsFromFile "${filename}" -XMP:All= "project.jpg" -ExifImageWidth= -ExifImageHeight= -ThumbnailImage= -overwrite_original -m
+
+	else
+		echo WARNING: Could not find Exiftool Exiftool is needed to preserve Metadata from Original Image in the Panorama file. >&2
+		echo Exiftool needs to installed and in standardpath for Exifdata Presevation >&2
+		notify-send 'WARNING: Could not find Exiftool' 'Exiftool is needed to preserve Metadata from Original Image in the Panorama file.
+	> Please install it and try again.' -u critical -i face-worried
+	
+
+	fi
+	
 	# Set Modification and access time equal to input file
 	touch -r "${filename}" "project.jpg"
 
